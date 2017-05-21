@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	// var date = new Date(Date.parse('January 1 1701'));
+	// var dateInMS = Date.parse(date);
+	// var numWeeks = 1;
+	// var firstOfMonth = 1;
+	// var newDate = new Date(dateInMS);
+	// while(newDate.getFullYear()<1800){
+	// 	newDate = new Date(dateInMS + numWeeks * 604800000);
+	// 	if (newDate.getDate() == 1){
+	// 		firstOfMonth++;
+	// 	}
+	// 	numWeeks++;
+	// }
+
+	// console.log(firstOfMonth);
+	// console.log(newDate);
+
+
+var numOfSaturdays = 0;
+for (let y = 1701; y < 1801; y++){
+    for (let m = 0; m <= 12; m++){
+        var d1 = new Date(Date.parse(`${m}/01/${y}`))
+        if (d1.getDay() == 6){
+            numOfSaturdays++;
+        }
+    }
+}
+console.log(numOfSaturdays);
+
+
+
+<!-- alg 2 -->
+
+// North Pole.
+
+<!-- alg 3 -->
+
+function romanize(num) {
+  var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1}
+  roman = ''
+  for ( i in lookup ) {
+    while ( num >= lookup[i] ) {
+      roman += i;
+      num -= lookup[i];
+    }
+  }
+  return roman;
+}
+
+
+// romanize(42);
+console.log(romanize(776));
+
+
+</script>
